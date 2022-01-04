@@ -1,0 +1,23 @@
+{
+  "version": 0.1,
+  "name": "sample-widget-custom-action",
+  "description": "Built with TCS BaNCS ADK Develop module",
+  "type": "action",
+  "className": "SampleWidgetCustomAction",
+  "displayName": "Sample-widget-customAction",
+  "designMode": {
+    "draggable": true,
+    "resizable": true,
+    "selectable": true,
+    "container": false
+  },
+  "actions": [
+    {
+      "target": "app",
+      "name": "SampleAction",
+      "text": "SampleAction",
+      "type": "ACTION",
+      "payloads": []
+    }
+  ]
+}

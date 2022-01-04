@@ -1,0 +1,421 @@
+{
+  "version": 0.1,
+  "name": "savings-account",
+  "widgetWorkflowId": "3540d434-961b-44ce-b845-5a7081ec9cfa",
+  "description": "Built with TCS BaNCS ADK Develop module",
+  "type": "component",
+  "className": "SavingsAccount",
+  "displayName": "Savings Account",
+  "directory": "savings-account",
+  "isDeveloperWidget": false,
+  "supportedDevices": [
+    {
+      "deviceType": "Desktop",
+      "supportedPlatforms": [
+        "Responsive Web"
+      ]
+    }
+  ],
+  "designMode": {
+    "draggable": true,
+    "resizable": true,
+    "selectable": true,
+    "container": false
+  },
+  "style": {
+    "height": "h-100",
+    "width": "w-100"
+  },
+  "designProps": {
+    "isSearchConfig": true,
+    "isBalanceConfig": true
+  },
+  "defaultData": {},
+  "events": [],
+  "widgetsActions": [
+    {
+      "action": "sampleAccountAction",
+      "featureRepo": "sample-widget-custom"
+    }
+  ],
+  "reducers": [
+    {
+      "featureRepo": "sample-widget-custom",
+      "reducer": "sampleAccount",
+      "reducerFunction": "sampleAccountReducer"
+    }
+  ],
+  "sagas": [
+    {
+      "featureRepo": "sample-widget-custom",
+      "saga": "sampleAccount",
+      "sagaFunction": "sampleAccountSaga"
+    }
+  ],
+  "content": [
+    {
+      "category": "core-features",
+      "parentProp": "titleLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Title",
+      "props": {
+        "languagekey": "SAVINGS",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "fx18",
+        "width": "w-50",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "accountBalance",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "displayName": "Account Balance",
+      "name": "Account Balance",
+      "props": {
+        "prefixPosition": "start",
+        "prefixVisiblility": true,
+        "accountFormat": "0.0.00",
+        "accountBalanceColor": "",
+        "amountTextSize": 12,
+        "amountTextSizeUnit": "px",
+        "prefixFontSize": 12,
+        "prefixFontSizeUnit": "px"
+      },
+      "style": {
+        "position": "relatif",
+        "fontweight": "fw5"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "addDepositButton",
+      "tag": "ADKButton",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Add Deposit Button",
+      "props": {
+        "value": "Add Deposit Account",
+        "block": true,
+        "size": "large",
+        "type": "primary",
+        "shape": "round",
+        "fontSize": 0.875
+      },
+      "style": {
+        "marginTop": "mt2",
+        "marginBottom": "mb2",
+        "height": "h-auto",
+        "width": "w-auto",
+        "background": "#2F80ED"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "totalAccountBalance",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Total Balance",
+      "props": {
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "fx18",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-50"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "searchInput",
+      "tag": "ADKInput",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Search Input",
+      "props": {
+        "placeholder": "Search Account",
+        "size": "large",
+        "inputType": "Search"
+      },
+      "style": {
+        "marginTop": "mt3"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "savingsAccountTable",
+      "tag": "ADKTable",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Savings Account Table",
+      "props": {},
+      "style": {}
+    },
+    {
+      "category": "core-features",
+      "parentProp": "nameLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Name Label",
+      "props": {
+        "languagekey": "ALIAS",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt2",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "fontWeight": "fw5"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "accountNumberLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Account Number Label",
+      "props": {
+        "languagekey": "ACC_NUMBER",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt2",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "fontWeight": "fw5"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "balanceLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Effective Balance Label",
+      "props": {
+        "languagekey": "EFFECTIVE_BALANCE",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt2",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "fontWeight": "fw5"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "indexImageInput",
+      "tag": "Image",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Index Image",
+      "props": {
+        "alt": "image",
+        "src": "",
+        "sourceType": "image"
+      },
+      "style": {
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "accountNumber",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "displayName": "Acount Number",
+      "name": "Account Number",
+      "props": {
+        "showIcon": false,
+        "accountDisplay": false,
+        "accountNumberDisplay": true,
+        "showAccountName": false,
+        "showAccountNumber": true,
+        "accountNumber": "5865765465765788",
+        "childType": "AccountIdentifier",
+        "isAccountMask": true,
+        "masDigits": "allExceptLast3",
+        "accountIdentifierSize": "f6",
+        "chosenAccountIdentifier": "accountNumber"
+      },
+      "style": {
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "transactionHistoryButton",
+      "tag": "ADKButton",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Account Movements Button",
+      "props": {
+        "value": "Account Movements",
+        "block": true,
+        "size": "large",
+        "type": "primary",
+        "shape": "round",
+        "fontSize": 16,
+        "fontSizeUnit": "px",
+        "fontWeight": 600,
+        "paddingLeft": "36",
+        "paddingRight": "36",
+        "languagekey": "ACCOUNT_MOVEMENTS",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt1",
+        "marginBottom": "mb1",
+        "fontSize": "f7",
+        "height": "h-100",
+        "width": "w-100",
+        "borderRadius": "br3"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "CIFNumberLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "CIF Number Label",
+      "props": {
+        "languagekey": "CIF_NUMBER",
+        "textsource": "language"
+      },
+      "style": {
+        "marginBottom": "mb0",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb1",
+        "paddingRight": "pr3",
+        "paddingLegt": "pl2",
+        "display": "flex",
+        "flex-direction": "justify-center"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "currentBalanceLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Total Balance Label",
+      "props": {
+        "languagekey": "TOTAL_BALANCE",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTBottom": "mb0",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb1",
+        "paddingRight": "pr3",
+        "paddingLeft": "pl2",
+        "display": "flex",
+        "flex-direction": "justify-center"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "currentBalance",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Current Balance",
+      "props": {
+        "prefixPosition": "start",
+        "prefixVisiblility": true,
+        "accountFormat": "0.0.00",
+        "accountBalanceColor": "",
+        "amountTextSize": 12,
+        "amountTextSizeUnit": "px",
+        "prefixFontSize": 12,
+        "prefixFontSizeUnit": "px",
+        "fontWeight": 600
+      },
+      "style": {
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "interestLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Interest Label",
+      "props": {
+        "languagekey": "INTEREST_LABEL",
+        "textsource": "language"
+      },
+      "style": {
+        "marginBottom": "mb0",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb1",
+        "paddingRight": "pr3",
+        "paddingLeft": "pl2",
+        "display": "flex",
+        "flex-direction": "justify-center"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "unclearedBalanceLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Uncleared Balance Label",
+      "props": {
+        "text": "Uncleared Balance Label"
+      },
+        "style": {
+        "marginBottom": "mb0",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb1",
+        "paddingRight": "pr3",
+        "display": "flex",
+        "flex-direction": "justify-center"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "unclearedBalance",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "displayName": "Uncleared Balance",
+      "name": "Uncleared Balance",
+      "props": {
+        "prefixPosition": "start",
+        "prefixVisiblility": true,
+        "accountFormat": "0.0.00",
+        "accountBalanceColor": "",
+        "amountTextSize": 12,
+        "amountTextSizeUnit": "px",
+        "prefixFontSize": 12,
+        "prefixFontSizeUnit": "px"
+      },
+      "style": {
+      }
+    }
+  ]
+}

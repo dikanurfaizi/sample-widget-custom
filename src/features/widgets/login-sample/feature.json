@@ -1,0 +1,30 @@
+{
+  "version": 0.1,
+  "name": "login-sample",
+  "widgetWorkflowId": "",
+  "description": "Built with TCS BaNCS ADK Develop module",
+  "type": "component",
+  "className": "LoginSample",
+  "displayName": "Login Sample",
+  "directory": "login-sample",
+  "isDeveloperWidget": false,
+  "supportedDevices": [
+    {
+      "deviceType": "Desktop",
+      "supportedPlatforms": []
+    }
+  ],
+  "designMode": {
+    "draggable": true,
+    "resizable": true,
+    "selectable": true,
+    "container": false
+  },
+  "style": {
+    "height": "h-100",
+    "width": "w-100"
+  },
+  "designProps": {},
+  "defaultData": {},
+  "events": []
+}

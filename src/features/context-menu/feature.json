@@ -1,0 +1,38 @@
+{
+  "version": 0.1,
+  "name": "sample-widget-custom",
+  "description": "Built with TCS BaNCS ADK Develop module",
+  "displayName": "sample-widget-custom",
+  "type": "category",
+  "isAContextMenu": true,
+  "contents": [
+    {
+      "name": "ADK Sample Widgets",
+      "type": "category",
+      "parent": "sample-widget-custom",
+      "contents": [
+        {
+          "name": "LoginSample",
+          "type": "component",
+          "path": "sample-widget-custom/ADK Sample Widgets",
+          "directory": "login-sample",
+          "displayName": "Login Sample"
+        }
+      ]
+    },
+    {
+      "name": "Accounts",
+      "type": "category",
+      "parent": "sample-widget-custom",
+      "contents": [
+        {
+          "name": "SavingsAccount",
+          "type": "component",
+          "path": "sample-widget-custom/Accounts",
+          "directory": "savings-account",
+          "displayName": "Savings Account"
+        }
+      ]
+    }
+  ]
+}

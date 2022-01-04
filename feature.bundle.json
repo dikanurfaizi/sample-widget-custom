@@ -1,0 +1,135 @@
+{
+  "name": "sample-widget-custom",
+  "fullName": "sample-widget-custom",
+  "description": "TCS BaNCS ADK. © 2021 TCS. All Rights Reserved.",
+  "main": "build/main.js",
+  "outDir": "build",
+  "version": "0.0.1",
+  "cliVersion": "0.8.5",
+  "minDesignerVersion": "4.1.40",
+  "features": [
+    {
+      "version": 0.1,
+      "name": "sample-widget-custom-action",
+      "description": "Built with TCS BaNCS ADK Develop module",
+      "type": "action",
+      "className": "SampleWidgetCustomAction",
+      "displayName": "Sample-widget-customAction",
+      "designMode": {
+        "draggable": true,
+        "resizable": true,
+        "selectable": true,
+        "container": false
+      },
+      "actions": [
+        {
+          "target": "app",
+          "name": "SampleAction",
+          "text": "SampleAction",
+          "type": "ACTION",
+          "payloads": []
+        }
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "sample-widget-custom",
+      "description": "Built with TCS BaNCS ADK Develop module",
+      "displayName": "sample-widget-custom",
+      "type": "category",
+      "isAContextMenu": true,
+      "contents": [
+        {
+          "name": "ADK Sample Widgets",
+          "type": "category",
+          "parent": "sample-widget-custom",
+          "contents": [
+            {
+              "name": "LoginSample",
+              "type": "component",
+              "path": "sample-widget-custom/ADK Sample Widgets",
+              "directory": "login-sample",
+              "displayName": "Login Sample"
+            }
+          ]
+        },
+        {
+          "name": "Accounts",
+          "type": "category",
+          "parent": "sample-widget-custom",
+          "contents": [
+            {
+              "name": "SavingsAccount",
+              "type": "component",
+              "path": "sample-widget-custom/Accounts",
+              "directory": "savings-account",
+              "displayName": "Savings Account"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "login-sample",
+      "widgetWorkflowId": "",
+      "description": "Built with TCS BaNCS ADK Develop module",
+      "type": "component",
+      "className": "LoginSample",
+      "displayName": "Login Sample",
+      "directory": "login-sample",
+      "isDeveloperWidget": false,
+      "supportedDevices": [
+        {
+          "deviceType": "Desktop",
+          "supportedPlatforms": []
+        }
+      ],
+      "designMode": {
+        "draggable": true,
+        "resizable": true,
+        "selectable": true,
+        "container": false
+      },
+      "style": {
+        "height": "h-100",
+        "width": "w-100"
+      },
+      "designProps": {},
+      "defaultData": {},
+      "events": []
+    },
+    {
+      "version": 0.1,
+      "name": "savings-account",
+      "widgetWorkflowId": "3540d434-961b-44ce-b845-5a7081ec9cfa",
+      "description": "Built with TCS BaNCS ADK Develop module",
+      "type": "component",
+      "className": "SavingsAccount",
+      "displayName": "Savings Account",
+      "directory": "savings-account",
+      "isDeveloperWidget": false,
+      "supportedDevices": [
+        {
+          "deviceType": "Desktop",
+          "supportedPlatforms": [
+            "Responsive Web"
+          ]
+        }
+      ],
+      "designMode": {
+        "draggable": true,
+        "resizable": true,
+        "selectable": true,
+        "container": false
+      },
+      "style": {
+        "height": "h-100",
+        "width": "w-100"
+      },
+      "designProps": {},
+      "defaultData": {},
+      "events": []
+    }
+  ]
+}
