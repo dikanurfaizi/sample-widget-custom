@@ -1,0 +1,437 @@
+{
+  "version": 0.1,
+  "name": "user-profile",
+  "widgetWorkflowId": "4052ac93-c3a1-4ea3-adfb-a8ded9480492",
+  "description": "Built with TCS BaNCS ADK Develop module",
+  "type": "component",
+  "className": "UserProfile",
+  "displayName": "User Profile",
+  "directory": "user-profile",
+  "isDeveloperWidget": false,
+  "supportedDevices": [
+    {
+      "deviceType": "Mobile",
+      "supportedPlatforms": [
+        "Android",
+        "iOS"
+      ]
+    },
+    {
+      "deviceType": "Desktop",
+      "supportedPlatforms": [
+        "Responsive Web"
+      ]
+    }
+  ],
+  "designMode": {
+    "draggable": true,
+    "resizable": true,
+    "selectable": true,
+    "container": false
+  },
+  "style": {
+    "height": "h-100",
+    "width": "w-100"
+  },
+  "designProps": {
+    "isProfilPhoto": true,
+    "isProfilName": true,
+    "isNameConfig": true,
+    "isDobConfig": true,
+    "isPhoneNoConfig": true,
+    "isAddressConfig": true,
+    "isEmailConfig": true,
+    "isGenderConfig": true,
+    "userDetails":{
+      "source": "app",
+      "sourceType": "VARIABLE",
+      "value": "userDetails",
+      "reducer": "sampleUser"
+    }
+  },
+  "defaultData": {
+    "userDetails": {
+      "fullName": " David R. Peters",
+      "birthDate": {
+        "day": "September 10, 1994"
+      },
+      "contactNumbers": {
+        "mobile": "+1 214 915 0603"
+      },
+      "postalContact": {
+        "business": {
+          "line1": "1401 Deercove Drive",
+          "postalCode": "10110"
+        }
+      },
+      "email": {
+        "person": "davidrp@abc.com"
+      },
+      "gender": "Male" 
+    }
+  },
+  "events": [
+    {
+      "value": "onProfileImageClick",
+      "text": "On Profile Image Click",
+      "image": ""
+    }
+  ],
+  "widgetsActions": [
+    {
+      "action": "sampleUserDetailsAction",
+      "featureRepo": "sample-widget-library"
+    }
+  ],
+  "reducers": [
+    {
+      "featureRepo": "sample-widget-library",
+      "reducer": "sampleUser",
+      "reducerFunction": "sampleUserReducer"
+    }
+  ],
+  "sagas": [
+    {
+      "featureRepo": "sample-widget-library",
+      "saga": "sampleUser",
+      "sagaFunction": "sampleUserSaga"
+    }
+  ],
+  "content": [
+    {
+      "category": "core-features",
+      "parentProp": "imageInput",
+      "tag": "Image",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "User Image",
+      "props": {
+        "alt": "image",
+        "src": "",
+        "sourceType": "image"
+      },
+      "style": {
+        "marginTop": "mt1",
+        "marginBottom": "mb1",
+        "fontSize": "f2",
+        "width": "w-auto",
+        "height": "h-auto",
+        "borderRadius": "br-100",
+        "maxWidth": "mw3"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "name",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Name",
+      "props": {
+      },
+      "style": {
+        "marginTop": "mt0",
+        "marginLeft": "ml4",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-40",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "userName",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "userName",
+      "props": {
+        "languagekey": "Name",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt4",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "nameValue",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Name Value",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt4",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "dob",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "DOB",
+      "props": {
+        "languagekey": "DOB",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "dobValue",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "DOB Value",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "phone",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Phone Number",
+      "props": {
+        "languagekey": "Phone",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "phoneValue",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Phone Number Value",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "address",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Address",
+      "props": {
+        "languagekey": "Address",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "addressLine1",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Address Line 1",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "address2",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Address",
+      "props": {
+      },
+      "style": {
+        "marginTop": "mt0",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "postalCode",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Postal Code",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt0",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "email",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Email Address",
+      "props": {
+        "languagekey": "Email Address",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "emailValue",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Email Value",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "gender",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Gender",
+      "props": {
+        "languagekey": "Gender",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw8",
+        "color": "black-text"
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "genderValue",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Gender value",
+      "props": {
+      },
+        "style": {
+        "marginTop": "mt3",
+        "fontSize": "f5",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "paddingRight": "pr3",
+        "width": "w-15",
+        "fontWeight": "fw5",
+        "color": "black-text"
+      }
+    }
+  ]
+}

@@ -34,6 +34,18 @@ eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assig
 
 /***/ }),
 
+/***/ "L/Qm":
+/*!******************************************************!*\
+  !*** ./src/features/reducers/sample-user-reducer.ts ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.sampleUserReducer = void 0;\r\nvar type_1 = __webpack_require__(/*! ../type */ \"h88k\");\r\nvar initialState = {};\r\nvar sampleUserReducer = function (state, action) {\r\n    if (state === void 0) { state = initialState; }\r\n    switch (action.type) {\r\n        case type_1.UserDetailsTypes.SET_USER_DETAILS:\r\n            return __assign(__assign({}, state), { userDetails: action.payload });\r\n        default:\r\n            return state;\r\n    }\r\n};\r\nexports.sampleUserReducer = sampleUserReducer;\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/reducers/sample-user-reducer.ts?");
+
+/***/ }),
+
 /***/ "MxiS":
 /*!****************************************!*\
   !*** ./src/features/reducers/index.ts ***!
@@ -42,7 +54,7 @@ eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assig
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./app-reducer */ \"9ZG7\"), exports);\r\n__exportStar(__webpack_require__(/*! ./authentication-reducer */ \"mW1W\"), exports);\r\n__exportStar(__webpack_require__(/*! ./sample-account-reducer */ \"JAuQ\"), exports);\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/reducers/index.ts?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./app-reducer */ \"9ZG7\"), exports);\r\n__exportStar(__webpack_require__(/*! ./authentication-reducer */ \"mW1W\"), exports);\r\n__exportStar(__webpack_require__(/*! ./sample-account-reducer */ \"JAuQ\"), exports);\r\n__exportStar(__webpack_require__(/*! ./sample-user-reducer */ \"L/Qm\"), exports);\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/reducers/index.ts?");
 
 /***/ }),
 
@@ -58,5 +70,5 @@ eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assig
 
 /***/ })
 
-},[["MxiS","runtime","action-action~component-savings-account~reducer-reducers"]]]);
+},[["MxiS","runtime","action-action~component-savings-account~reducer-reducers~saga-sagas"]]]);
 });

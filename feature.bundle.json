@@ -10,25 +10,1033 @@
   "features": [
     {
       "version": 0.1,
-      "name": "sample-widget-custom-action",
+      "name": "login-sample",
+      "widgetWorkflowId": "",
       "description": "Built with TCS BaNCS ADK Develop module",
-      "type": "action",
-      "className": "SampleWidgetCustomAction",
-      "displayName": "Sample-widget-customAction",
+      "type": "component",
+      "className": "LoginSample",
+      "displayName": "Login Sample",
+      "directory": "login-sample",
+      "isDeveloperWidget": false,
+      "supportedDevices": [
+        {
+          "deviceType": "Desktop",
+          "supportedPlatforms": []
+        }
+      ],
       "designMode": {
         "draggable": true,
         "resizable": true,
         "selectable": true,
         "container": false
       },
-      "actions": [
+      "style": {
+        "height": "h-100",
+        "width": "w-100"
+      },
+      "designProps": {},
+      "defaultData": {},
+      "events": [],
+      "moduleAssets": [
+        "runtime.js"
+      ],
+      "modulePath": "component-login-sample.js",
+      "moduleName": "component-login-sample",
+      "panelPath": "component-login-sample-panel.js",
+      "panelAssets": [
+        "runtime.js",
+        "vendor/blueprintjs.js",
+        "vendor/designer-widgets.js",
+        "vendor/popper.js.js",
+        "vendor/prop-types.js",
+        "vendor/resize-observer-polyfill.js",
+        "vendor/dom4.js",
+        "vendor/get-intrinsic.js",
+        "vendor/tslib.js",
+        "vendor/react-lifecycles-compat.js",
+        "vendor/process.js",
+        "vendor/object-keys.js",
+        "vendor/deep-equal.js",
+        "vendor/babel.js",
+        "vendor/regexp.prototype.flags.js",
+        "vendor/has-symbols.js",
+        "vendor/object-assign.js",
+        "vendor/warning.js",
+        "vendor/call-bind.js",
+        "vendor/define-properties.js",
+        "vendor/function-bind.js",
+        "vendor/dom-helpers.js",
+        "vendor/is-regex.js",
+        "vendor/classnames.js",
+        "vendor/object-is.js",
+        "vendor/is-arguments.js",
+        "vendor/is-date-object.js",
+        "vendor/webpack.js",
+        "vendor/has-tostringtag.js",
+        "vendor/gud.js",
+        "vendor/has.js"
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "savings-account",
+      "widgetWorkflowId": "3540d434-961b-44ce-b845-5a7081ec9cfa",
+      "description": "Built with TCS BaNCS ADK Develop module",
+      "type": "component",
+      "className": "SavingsAccount",
+      "displayName": "Savings Account",
+      "directory": "savings-account",
+      "isDeveloperWidget": false,
+      "supportedDevices": [
         {
-          "target": "app",
-          "name": "SampleAction",
-          "text": "SampleAction",
-          "type": "ACTION",
-          "payloads": []
+          "deviceType": "Desktop",
+          "supportedPlatforms": [
+            "Responsive Web"
+          ]
         }
+      ],
+      "designMode": {
+        "draggable": true,
+        "resizable": true,
+        "selectable": true,
+        "container": false
+      },
+      "style": {
+        "height": "h-100",
+        "width": "w-100"
+      },
+      "designProps": {
+        "isSearchConfig": true,
+        "isBalanceConfig": true,
+        "savingsAccountListDetails": {
+          "source": "app",
+          "sourceType": "VARIABLE",
+          "value": "savingsAccountListDetails",
+          "reducer": "sampleAccount"
+        },
+        "savingsAccountListDetailsStatus": {
+          "source": "app",
+          "sourceType": "VARIABLE",
+          "value": "savingsAccountListDetailsStatus",
+          "reducer": "sampleAccount"
+        }
+      },
+      "defaultData": {
+        "savingsAccountListDetails": [
+          {
+            "alias": "Reyan",
+            "availableBalance": "14432",
+            "accountNumber": {
+              "isHashed": true,
+              "maskedNumber": "43**********56"
+            },
+            "unclearedBalance": "435687",
+            "CIFNumber": "233453456",
+            "currentBalance": "45677",
+            "intereset": "0.00%"
+          },
+          {
+            "alias": "Philip",
+            "availableBalance": "944332",
+            "accountNumber": {
+              "isHashed": true,
+              "maskedNumber": "43**********59"
+            },
+            "unclearedBalance": "435687",
+            "CIFNumber": "1234562434",
+            "currentBalance": "45677",
+            "intereset": "0.00%"
+          }
+        ]
+      },
+      "events": [],
+      "widgetsActions": [
+        {
+          "action": "fetchSavingsAccountListDetailsAction",
+          "featureRepo": "sample-widget-custom"
+        }
+      ],
+      "reducers": [
+        {
+          "featureRepo": "sample-widget-custom",
+          "reducer": "sampleAccount",
+          "reducerFunction": "sampleAccountReducer"
+        }
+      ],
+      "sagas": [
+        {
+          "featureRepo": "sample-widget-custom",
+          "saga": "sampleAccount",
+          "sagaFunction": "sampleAccountSaga"
+        }
+      ],
+      "content": [
+        {
+          "category": "core-features",
+          "parentProp": "titleLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Title",
+          "props": {
+            "languagekey": "SAVINGS",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "fx18",
+            "width": "w-50",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "accountBalance",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "displayName": "Account Balance",
+          "name": "Account Balance",
+          "props": {
+            "prefixPosition": "start",
+            "prefixVisiblility": true,
+            "accountFormat": "0.0.00",
+            "accountBalanceColor": "",
+            "amountTextSize": 12,
+            "amountTextSizeUnit": "px",
+            "prefixFontSize": 12,
+            "prefixFontSizeUnit": "px"
+          },
+          "style": {
+            "position": "relatif",
+            "fontweight": "fw5"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "addDepositButton",
+          "tag": "ADKButton",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Add Deposit Button",
+          "props": {
+            "value": "Add Deposit Account",
+            "block": true,
+            "size": "large",
+            "type": "primary",
+            "shape": "round",
+            "fontSize": 0.875
+          },
+          "style": {
+            "marginTop": "mt2",
+            "marginBottom": "mb2",
+            "height": "h-auto",
+            "width": "w-auto",
+            "background": "#2F80ED"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "totalAccountBalance",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Total Balance",
+          "props": {},
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "fx18",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-50"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "searchInput",
+          "tag": "ADKInput",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Search Input",
+          "props": {
+            "placeholder": "Search Account",
+            "size": "large",
+            "inputType": "Search"
+          },
+          "style": {
+            "marginTop": "mt3"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "savingsAccountTable",
+          "tag": "ADKTable",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Savings Account Table",
+          "props": {},
+          "style": {}
+        },
+        {
+          "category": "core-features",
+          "parentProp": "nameLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Name Label",
+          "props": {
+            "languagekey": "ALIAS",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt2",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "fontWeight": "fw5"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "accountNumberLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Account Number Label",
+          "props": {
+            "languagekey": "ACC_NUMBER",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt2",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "fontWeight": "fw5"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "balanceLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Effective Balance Label",
+          "props": {
+            "languagekey": "EFFECTIVE_BALANCE",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt2",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "fontWeight": "fw5"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "indexImageInput",
+          "tag": "Image",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Index Image",
+          "props": {
+            "alt": "image",
+            "src": "",
+            "sourceType": "image"
+          },
+          "style": {}
+        },
+        {
+          "category": "core-features",
+          "parentProp": "accountNumber",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "displayName": "Acount Number",
+          "name": "Account Number",
+          "props": {
+            "showIcon": false,
+            "accountDisplay": false,
+            "accountNumberDisplay": true,
+            "showAccountName": false,
+            "showAccountNumber": true,
+            "accountNumber": "5865765465765788",
+            "childType": "AccountIdentifier",
+            "isAccountMask": true,
+            "masDigits": "allExceptLast3",
+            "accountIdentifierSize": "f6",
+            "chosenAccountIdentifier": "accountNumber"
+          },
+          "style": {}
+        },
+        {
+          "category": "core-features",
+          "parentProp": "transactionHistoryButton",
+          "tag": "ADKButton",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Account Movements Button",
+          "props": {
+            "value": "Account Movements",
+            "block": true,
+            "size": "large",
+            "type": "primary",
+            "shape": "round",
+            "fontSize": 16,
+            "fontSizeUnit": "px",
+            "fontWeight": 600,
+            "paddingLeft": "36",
+            "paddingRight": "36",
+            "languagekey": "ACCOUNT_MOVEMENTS",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt1",
+            "marginBottom": "mb1",
+            "fontSize": "f7",
+            "height": "h-100",
+            "width": "w-100",
+            "borderRadius": "br3"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "CIFNumberLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "CIF Number Label",
+          "props": {
+            "languagekey": "CIF_NUMBER",
+            "textsource": "language"
+          },
+          "style": {
+            "marginBottom": "mb0",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb1",
+            "paddingRight": "pr3",
+            "paddingLegt": "pl2",
+            "display": "flex",
+            "flex-direction": "justify-center"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "currentBalanceLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Total Balance Label",
+          "props": {
+            "languagekey": "TOTAL_BALANCE",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTBottom": "mb0",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb1",
+            "paddingRight": "pr3",
+            "paddingLeft": "pl2",
+            "display": "flex",
+            "flex-direction": "justify-center"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "currentBalance",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Current Balance",
+          "props": {
+            "prefixPosition": "start",
+            "prefixVisiblility": true,
+            "accountFormat": "0.0.00",
+            "accountBalanceColor": "",
+            "amountTextSize": 12,
+            "amountTextSizeUnit": "px",
+            "prefixFontSize": 12,
+            "prefixFontSizeUnit": "px",
+            "fontWeight": 600
+          },
+          "style": {}
+        },
+        {
+          "category": "core-features",
+          "parentProp": "interestLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Interest Label",
+          "props": {
+            "languagekey": "INTEREST_LABEL",
+            "textsource": "language"
+          },
+          "style": {
+            "marginBottom": "mb0",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb1",
+            "paddingRight": "pr3",
+            "paddingLeft": "pl2",
+            "display": "flex",
+            "flex-direction": "justify-center"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "unclearedBalanceLabel",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Uncleared Balance Label",
+          "props": {
+            "text": "Uncleared Balance Label"
+          },
+          "style": {
+            "marginBottom": "mb0",
+            "fontSize": "f6",
+            "height": "h-auto",
+            "paddingBootom": "pb1",
+            "paddingRight": "pr3",
+            "display": "flex",
+            "flex-direction": "justify-center"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "unclearedBalance",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "displayName": "Uncleared Balance",
+          "name": "Uncleared Balance",
+          "props": {
+            "prefixPosition": "start",
+            "prefixVisiblility": true,
+            "accountFormat": "0.0.00",
+            "accountBalanceColor": "",
+            "amountTextSize": 12,
+            "amountTextSizeUnit": "px",
+            "prefixFontSize": 12,
+            "prefixFontSizeUnit": "px"
+          },
+          "style": {}
+        }
+      ],
+      "moduleAssets": [
+        "runtime.js",
+        "action-action~component-savings-account~reducer-reducers~saga-sagas.js"
+      ],
+      "modulePath": "component-savings-account.js",
+      "moduleName": "component-savings-account",
+      "panelPath": "component-savings-account-panel.js",
+      "panelAssets": [
+        "runtime.js",
+        "vendor/blueprintjs.js",
+        "vendor/designer-widgets.js",
+        "vendor/popper.js.js",
+        "vendor/prop-types.js",
+        "vendor/resize-observer-polyfill.js",
+        "vendor/dom4.js",
+        "vendor/get-intrinsic.js",
+        "vendor/tslib.js",
+        "vendor/react-lifecycles-compat.js",
+        "vendor/process.js",
+        "vendor/object-keys.js",
+        "vendor/deep-equal.js",
+        "vendor/babel.js",
+        "vendor/regexp.prototype.flags.js",
+        "vendor/has-symbols.js",
+        "vendor/object-assign.js",
+        "vendor/warning.js",
+        "vendor/call-bind.js",
+        "vendor/define-properties.js",
+        "vendor/function-bind.js",
+        "vendor/dom-helpers.js",
+        "vendor/is-regex.js",
+        "vendor/classnames.js",
+        "vendor/object-is.js",
+        "vendor/is-arguments.js",
+        "vendor/is-date-object.js",
+        "vendor/webpack.js",
+        "vendor/has-tostringtag.js",
+        "vendor/gud.js",
+        "vendor/has.js"
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "user-profile",
+      "widgetWorkflowId": "4052ac93-c3a1-4ea3-adfb-a8ded9480492",
+      "description": "Built with TCS BaNCS ADK Develop module",
+      "type": "component",
+      "className": "UserProfile",
+      "displayName": "User Profile",
+      "directory": "user-profile",
+      "isDeveloperWidget": false,
+      "supportedDevices": [
+        {
+          "deviceType": "Mobile",
+          "supportedPlatforms": [
+            "Android",
+            "iOS"
+          ]
+        },
+        {
+          "deviceType": "Desktop",
+          "supportedPlatforms": [
+            "Responsive Web"
+          ]
+        }
+      ],
+      "designMode": {
+        "draggable": true,
+        "resizable": true,
+        "selectable": true,
+        "container": false
+      },
+      "style": {
+        "height": "h-100",
+        "width": "w-100"
+      },
+      "designProps": {
+        "isProfilPhoto": true,
+        "isProfilName": true,
+        "isNameConfig": true,
+        "isDobConfig": true,
+        "isPhoneNoConfig": true,
+        "isAddressConfig": true,
+        "isEmailConfig": true,
+        "isGenderConfig": true,
+        "userDetails": {
+          "source": "app",
+          "sourceType": "VARIABLE",
+          "value": "userDetails",
+          "reducer": "sampleUser"
+        }
+      },
+      "defaultData": {
+        "userDetails": {
+          "fullName": " David R. Peters",
+          "birthDate": {
+            "day": "September 10, 1994"
+          },
+          "contactNumbers": {
+            "mobile": "+1 214 915 0603"
+          },
+          "postalContact": {
+            "business": {
+              "line1": "1401 Deercove Drive",
+              "postalCode": "10110"
+            }
+          },
+          "email": {
+            "person": "davidrp@abc.com"
+          },
+          "gender": "Male"
+        }
+      },
+      "events": [
+        {
+          "value": "onProfileImageClick",
+          "text": "On Profile Image Click",
+          "image": ""
+        }
+      ],
+      "widgetsActions": [
+        {
+          "action": "sampleUserDetailsAction",
+          "featureRepo": "sample-widget-library"
+        }
+      ],
+      "reducers": [
+        {
+          "featureRepo": "sample-widget-library",
+          "reducer": "sampleUser",
+          "reducerFunction": "sampleUserReducer"
+        }
+      ],
+      "sagas": [
+        {
+          "featureRepo": "sample-widget-library",
+          "saga": "sampleUser",
+          "sagaFunction": "sampleUserSaga"
+        }
+      ],
+      "content": [
+        {
+          "category": "core-features",
+          "parentProp": "imageInput",
+          "tag": "Image",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "User Image",
+          "props": {
+            "alt": "image",
+            "src": "",
+            "sourceType": "image"
+          },
+          "style": {
+            "marginTop": "mt1",
+            "marginBottom": "mb1",
+            "fontSize": "f2",
+            "width": "w-auto",
+            "height": "h-auto",
+            "borderRadius": "br-100",
+            "maxWidth": "mw3"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "name",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Name",
+          "props": {},
+          "style": {
+            "marginTop": "mt0",
+            "marginLeft": "ml4",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-40",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "userName",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "userName",
+          "props": {
+            "languagekey": "Name",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt4",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "nameValue",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Name Value",
+          "props": {},
+          "style": {
+            "marginTop": "mt4",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "dob",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "DOB",
+          "props": {
+            "languagekey": "DOB",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "dobValue",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "DOB Value",
+          "props": {},
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "phone",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Phone Number",
+          "props": {
+            "languagekey": "Phone",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "phoneValue",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Phone Number Value",
+          "props": {},
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "address",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Address",
+          "props": {
+            "languagekey": "Address",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "addressLine1",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Address Line 1",
+          "props": {},
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "address2",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Address",
+          "props": {},
+          "style": {
+            "marginTop": "mt0",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "postalCode",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Postal Code",
+          "props": {},
+          "style": {
+            "marginTop": "mt0",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "email",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Email Address",
+          "props": {
+            "languagekey": "Email Address",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "emailValue",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Email Value",
+          "props": {},
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "gender",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Gender",
+          "props": {
+            "languagekey": "Gender",
+            "textsource": "language"
+          },
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw8",
+            "color": "black-text"
+          }
+        },
+        {
+          "category": "core-features",
+          "parentProp": "genderValue",
+          "tag": "Label",
+          "widgetType": "CHILD",
+          "type": "component",
+          "name": "Gender value",
+          "props": {},
+          "style": {
+            "marginTop": "mt3",
+            "fontSize": "f5",
+            "height": "h-auto",
+            "paddingBootom": "pb0",
+            "paddingRight": "pr3",
+            "width": "w-15",
+            "fontWeight": "fw5",
+            "color": "black-text"
+          }
+        }
+      ],
+      "moduleAssets": [
+        "runtime.js"
+      ],
+      "modulePath": "component-user-profile.js",
+      "moduleName": "component-user-profile",
+      "panelPath": "component-user-profile-panel.js",
+      "panelAssets": [
+        "runtime.js",
+        "vendor/blueprintjs.js",
+        "vendor/designer-widgets.js",
+        "vendor/popper.js.js",
+        "vendor/prop-types.js",
+        "vendor/resize-observer-polyfill.js",
+        "vendor/dom4.js",
+        "vendor/get-intrinsic.js",
+        "vendor/tslib.js",
+        "vendor/react-lifecycles-compat.js",
+        "vendor/process.js",
+        "vendor/object-keys.js",
+        "vendor/deep-equal.js",
+        "vendor/babel.js",
+        "vendor/regexp.prototype.flags.js",
+        "vendor/has-symbols.js",
+        "vendor/object-assign.js",
+        "vendor/warning.js",
+        "vendor/call-bind.js",
+        "vendor/define-properties.js",
+        "vendor/function-bind.js",
+        "vendor/dom-helpers.js",
+        "vendor/is-regex.js",
+        "vendor/classnames.js",
+        "vendor/object-is.js",
+        "vendor/is-arguments.js",
+        "vendor/is-date-object.js",
+        "vendor/webpack.js",
+        "vendor/has-tostringtag.js",
+        "vendor/gud.js",
+        "vendor/has.js"
       ]
     },
     {
@@ -64,6 +1072,13 @@
               "path": "sample-widget-custom/Accounts",
               "directory": "savings-account",
               "displayName": "Savings Account"
+            },
+            {
+              "name": "UserProfile",
+              "type": "component",
+              "path": "sample-widget-custom/Accounts",
+              "directory": "user-profile",
+              "displayName": "User Profile"
             }
           ]
         }
@@ -71,65 +1086,60 @@
     },
     {
       "version": 0.1,
-      "name": "login-sample",
-      "widgetWorkflowId": "",
+      "name": "sample-widget-custom-action",
       "description": "Built with TCS BaNCS ADK Develop module",
-      "type": "component",
-      "className": "LoginSample",
-      "displayName": "Login Sample",
-      "directory": "login-sample",
-      "isDeveloperWidget": false,
-      "supportedDevices": [
-        {
-          "deviceType": "Desktop",
-          "supportedPlatforms": []
-        }
-      ],
+      "type": "action",
+      "className": "SampleWidgetCustomAction",
+      "displayName": "Sample-widget-customAction",
       "designMode": {
         "draggable": true,
         "resizable": true,
         "selectable": true,
         "container": false
       },
-      "style": {
-        "height": "h-100",
-        "width": "w-100"
-      },
-      "designProps": {},
-      "defaultData": {},
-      "events": []
+      "actions": [
+        {
+          "target": "app",
+          "name": "SampleAction",
+          "text": "SampleAction",
+          "type": "ACTION",
+          "payloads": []
+        }
+      ],
+      "moduleAssets": [
+        "runtime.js",
+        "action-action~component-savings-account~reducer-reducers~saga-sagas.js",
+        "action-action~saga-sagas.js"
+      ],
+      "modulePath": "action-action.js",
+      "moduleName": "action-action"
     },
     {
-      "version": 0.1,
-      "name": "savings-account",
-      "widgetWorkflowId": "3540d434-961b-44ce-b845-5a7081ec9cfa",
-      "description": "Built with TCS BaNCS ADK Develop module",
-      "type": "component",
-      "className": "SavingsAccount",
-      "displayName": "Savings Account",
-      "directory": "savings-account",
-      "isDeveloperWidget": false,
-      "supportedDevices": [
-        {
-          "deviceType": "Desktop",
-          "supportedPlatforms": [
-            "Responsive Web"
-          ]
-        }
+      "version": "0.0.1",
+      "name": "sample-widget-custom--reducer",
+      "type": "reducer",
+      "className": "SampleWidgetCustomReducer",
+      "displayName": "sample-widget-custom reducer",
+      "moduleAssets": [
+        "runtime.js",
+        "action-action~component-savings-account~reducer-reducers~saga-sagas.js"
       ],
-      "designMode": {
-        "draggable": true,
-        "resizable": true,
-        "selectable": true,
-        "container": false
-      },
-      "style": {
-        "height": "h-100",
-        "width": "w-100"
-      },
-      "designProps": {},
-      "defaultData": {},
-      "events": []
+      "modulePath": "reducer-reducers.js",
+      "moduleName": "reducer-reducers"
+    },
+    {
+      "version": "0.0.1",
+      "name": "sample-widget-custom--saga",
+      "type": "saga",
+      "className": "SampleWidgetCustomSaga",
+      "displayName": "sample-widget-custom saga",
+      "moduleAssets": [
+        "runtime.js",
+        "action-action~component-savings-account~reducer-reducers~saga-sagas.js",
+        "action-action~saga-sagas.js"
+      ],
+      "modulePath": "saga-sagas.js",
+      "moduleName": "saga-sagas"
     }
   ]
 }

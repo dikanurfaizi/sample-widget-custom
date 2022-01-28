@@ -62,20 +62,21 @@ export class SavingsAccount extends React.Component<SavingsAccountProps, Savings
   }
 
   componentDidMount() {
+    console.log("This compenentDidMount")
     this.props.fetchSavingsAccountListDetailsAction?.('savings')
     this.setState({
-      savingsAccountsData: this.props && this.props.savingsAccountListDetails
+      savingsAccountsData: this.props && this.props?.savingsAccountListDetails
     })
-}
+  }
 
-componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps){
     if(
       prevProps.savingsAccountListDetailsStatus !==
       this.props.savingsAccountListDetailsStatus
     ){
       this.handleLoading()
     }
-}
+  }
 
 handleLoading() {
   switch (this.props.savingsAccountListDetailsStatus){
@@ -130,8 +131,8 @@ getCurrentColumns = () => {
         (item) => !filterColumns.includes(item.key)
       )
     }
-    return currentColumns
   }
+  return currentColumns
 }
 
 renderSavingsAccountListDetailsItem() {
@@ -318,7 +319,7 @@ renderSavingsData() {
     <div className={`flex w-100 h-100 flex-column overflow-y-auto ph3`}>
       {
         savingsAccountsData && savingsAccountsData.length > 0
-        ? this.renderSavingsData()
+        ? this.renderData()
         : "DATA NOT AVAILABLE"
       }
     </div>

@@ -92,5 +92,7 @@
     "typesafe-actions": "^5.1.0"
   },
   "outDir": "build",
-  "fullName": "sample-widget-custom"
+  "fullName": "sample-widget-custom",
+  "cliVersion": "0.8.5",
+  "minDesignerVersion": "4.1.40"
 }

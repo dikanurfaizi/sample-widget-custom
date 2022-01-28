@@ -1,25 +1,95 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("redux-saga/effects"), require("typesafe-actions"), require("adk-api"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["redux-saga/effects", "typesafe-actions", "adk-api"], factory);
 	else if(typeof exports === 'object')
-		exports["sample-widget-custom"] = factory();
+		exports["sample-widget-custom"] = factory(require("redux-saga/effects"), require("typesafe-actions"), require("adk-api"));
 	else
-		root["sample-widget-custom"] = factory();
-})(window, function() {
+		root["sample-widget-custom"] = factory(root["redux-saga/effects"], root["typesafe-actions"], root["adk-api"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_RmXt__, __WEBPACK_EXTERNAL_MODULE_i0Yl__, __WEBPACK_EXTERNAL_MODULE_yPTa__) {
 return (window["webpackJsonpsample_widget_custom"] = window["webpackJsonpsample_widget_custom"] || []).push([["saga-sagas"],{
+
+/***/ "OgqP":
+/*!***************************************************!*\
+  !*** ./src/features/sagas/sample-account-saga.ts ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nvar __generator = (this && this.__generator) || function (thisArg, body) {\r\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\r\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\r\n    function verb(n) { return function (v) { return step([n, v]); }; }\r\n    function step(op) {\r\n        if (f) throw new TypeError(\"Generator is already executing.\");\r\n        while (_) try {\r\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\r\n            if (y = 0, t) op = [op[0] & 2, t.value];\r\n            switch (op[0]) {\r\n                case 0: case 1: t = op; break;\r\n                case 4: _.label++; return { value: op[1], done: false };\r\n                case 5: _.label++; y = op[1]; op = [0]; continue;\r\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\r\n                default:\r\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\r\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\r\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\r\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\r\n                    if (t[2]) _.ops.pop();\r\n                    _.trys.pop(); continue;\r\n            }\r\n            op = body.call(thisArg, _);\r\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\r\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\r\n    }\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.sampleAccountSaga = void 0;\r\nvar effects_1 = __webpack_require__(/*! redux-saga/effects */ \"RmXt\");\r\nvar action_1 = __webpack_require__(/*! ../action */ \"Oluw\");\r\nvar adk_api_1 = __webpack_require__(/*! adk-api */ \"yPTa\");\r\nvar api_client_1 = __webpack_require__(/*! ../../utils/api-client */ \"k2Ew\");\r\nvar type_1 = __webpack_require__(/*! ../type */ \"h88k\");\r\nvar getAppConfigState = function (state) { return state.appConfig; };\r\nfunction handleAccountDetails() {\r\n    var appConfig, moduleUrl, accountListReq, savingsAccountList, accountDetailsList, accountDetail, i, accountDetails, _a, savingsAccountDetails, apiStatus, error_1;\r\n    return __generator(this, function (_b) {\r\n        switch (_b.label) {\r\n            case 0:\r\n                _b.trys.push([0, 13, , 15]);\r\n                console.log('Inside Saga handleAccountDetails');\r\n                return [4 /*yield*/, effects_1.select(getAppConfigState)];\r\n            case 1:\r\n                appConfig = _b.sent();\r\n                moduleUrl = appConfig.baseUrl;\r\n                accountListReq = {\r\n                    accountTypes: [adk_api_1.AccountTypeEnum.SAVINGS_DEPOSIT, adk_api_1.AccountTypeEnum.DEMAND_DEPOSIT]\r\n                };\r\n                return [4 /*yield*/, effects_1.put(action_1.setSavingsAccountListDetailsStatus(type_1.ApiRequestStatus.IN_PROGRESS))\r\n                    //API call\r\n                ];\r\n            case 2:\r\n                _b.sent();\r\n                //API call\r\n                console.log(\"AccountList Req\", accountListReq);\r\n                return [4 /*yield*/, api_client_1.apiClient(adk_api_1.AccountList, accountListReq, moduleUrl)];\r\n            case 3:\r\n                savingsAccountList = _b.sent();\r\n                console.log(\"Detail List show\", savingsAccountList);\r\n                accountDetailsList = [];\r\n                accountDetail = void 0, i = void 0;\r\n                if (!(savingsAccountList.apiStatus.code === adk_api_1.ApiStatusCodes.SUCCESS)) return [3 /*break*/, 10];\r\n                i = 0;\r\n                _b.label = 4;\r\n            case 4:\r\n                if (!(i < savingsAccountList.accountList.length)) return [3 /*break*/, 7];\r\n                //API call\r\n                console.log(\"API CALL AccountList\");\r\n                return [4 /*yield*/, api_client_1.apiClient(adk_api_1.AccountDetailsSavings, {\r\n                        accountNumber: savingsAccountList.accountList[i].accountNumber,\r\n                        accountType: savingsAccountList.accountList[i].accountType\r\n                    }, moduleUrl)];\r\n            case 5:\r\n                accountDetails = _b.sent();\r\n                _a = accountDetails, savingsAccountDetails = _a.savingsAccountDetails, apiStatus = _a.apiStatus;\r\n                accountDetail = __assign(__assign(__assign({}, savingsAccountList.accountList[i]), { apiStatus: apiStatus }), savingsAccountDetails);\r\n                accountDetailsList.push(accountDetail);\r\n                _b.label = 6;\r\n            case 6:\r\n                i++;\r\n                return [3 /*break*/, 4];\r\n            case 7: return [4 /*yield*/, effects_1.put(action_1.setSavingAccountListDetails(accountDetailsList))];\r\n            case 8:\r\n                _b.sent();\r\n                return [4 /*yield*/, effects_1.put(action_1.setSavingsAccountListDetailsStatus(type_1.ApiRequestStatus.SUCCESS))];\r\n            case 9:\r\n                _b.sent();\r\n                return [3 /*break*/, 12];\r\n            case 10: return [4 /*yield*/, effects_1.put(action_1.setSavingsAccountListDetailsStatus(type_1.ApiRequestStatus.FAIL))];\r\n            case 11:\r\n                _b.sent();\r\n                _b.label = 12;\r\n            case 12: return [3 /*break*/, 15];\r\n            case 13:\r\n                error_1 = _b.sent();\r\n                return [4 /*yield*/, effects_1.put(action_1.setSavingsAccountListDetailsStatus(type_1.ApiRequestStatus.FAIL))];\r\n            case 14:\r\n                _b.sent();\r\n                return [3 /*break*/, 15];\r\n            case 15: return [2 /*return*/];\r\n        }\r\n    });\r\n}\r\nfunction watchGetCustomerDetails() {\r\n    return __generator(this, function (_a) {\r\n        switch (_a.label) {\r\n            case 0: return [4 /*yield*/, effects_1.takeLatest(type_1.AccountsTypes.FETCH_SAVINGS_ACOUNT_DETAILS, handleAccountDetails)];\r\n            case 1:\r\n                _a.sent();\r\n                return [2 /*return*/];\r\n        }\r\n    });\r\n}\r\nfunction sampleAccountSaga() {\r\n    return __generator(this, function (_a) {\r\n        switch (_a.label) {\r\n            case 0: return [4 /*yield*/, effects_1.all([\r\n                    effects_1.fork(watchGetCustomerDetails)\r\n                ])];\r\n            case 1:\r\n                _a.sent();\r\n                return [2 /*return*/];\r\n        }\r\n    });\r\n}\r\nexports.sampleAccountSaga = sampleAccountSaga;\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/sagas/sample-account-saga.ts?");
+
+/***/ }),
+
+/***/ "RmXt":
+/*!*************************************!*\
+  !*** external "redux-saga/effects" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_RmXt__;\n\n//# sourceURL=webpack://sample-widget-custom/external_%22redux-saga/effects%22?");
+
+/***/ }),
+
+/***/ "ddf/":
+/*!************************************************!*\
+  !*** ./src/features/sagas/sample-user-saga.ts ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nvar __generator = (this && this.__generator) || function (thisArg, body) {\r\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\r\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\r\n    function verb(n) { return function (v) { return step([n, v]); }; }\r\n    function step(op) {\r\n        if (f) throw new TypeError(\"Generator is already executing.\");\r\n        while (_) try {\r\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\r\n            if (y = 0, t) op = [op[0] & 2, t.value];\r\n            switch (op[0]) {\r\n                case 0: case 1: t = op; break;\r\n                case 4: _.label++; return { value: op[1], done: false };\r\n                case 5: _.label++; y = op[1]; op = [0]; continue;\r\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\r\n                default:\r\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\r\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\r\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\r\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\r\n                    if (t[2]) _.ops.pop();\r\n                    _.trys.pop(); continue;\r\n            }\r\n            op = body.call(thisArg, _);\r\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\r\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\r\n    }\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.sampleUserSaga = void 0;\r\nvar effects_1 = __webpack_require__(/*! redux-saga/effects */ \"RmXt\");\r\nvar action_1 = __webpack_require__(/*! ../action */ \"Oluw\");\r\nvar adk_api_1 = __webpack_require__(/*! adk-api */ \"yPTa\");\r\nvar api_client_1 = __webpack_require__(/*! ../../utils/api-client */ \"k2Ew\");\r\nvar type_1 = __webpack_require__(/*! ../type */ \"h88k\");\r\nvar getAppConfigState = function (state) { return state.appConfig; };\r\nfunction handleUserDetails() {\r\n    var appConfig, moduleUrl, customerDetailsReq, customerDetailsResult, e_1;\r\n    return __generator(this, function (_a) {\r\n        switch (_a.label) {\r\n            case 0:\r\n                _a.trys.push([0, 5, , 6]);\r\n                console.log(\"Inside Saga handleUserDetails\");\r\n                return [4 /*yield*/, effects_1.select(getAppConfigState)];\r\n            case 1:\r\n                appConfig = _a.sent();\r\n                moduleUrl = appConfig.baseUrl;\r\n                customerDetailsReq = {\r\n                    category: adk_api_1.PayloadCategoryEnum.CONTACT_LIST,\r\n                };\r\n                return [4 /*yield*/, api_client_1.apiClient(adk_api_1.CustomerDetails, customerDetailsReq, moduleUrl)];\r\n            case 2:\r\n                customerDetailsResult = _a.sent();\r\n                console.log(\"customer Detail Result\", customerDetailsResult);\r\n                if (!(customerDetailsResult &&\r\n                    customerDetailsResult.apiStatus.code === adk_api_1.ApiStatusCodes.SUCCESS)) return [3 /*break*/, 4];\r\n                // Setting API response\r\n                return [4 /*yield*/, effects_1.put(action_1.setSampleUserDetailsAction(__assign({}, customerDetailsResult.customerDetails)))];\r\n            case 3:\r\n                // Setting API response\r\n                _a.sent();\r\n                return [3 /*break*/, 4];\r\n            case 4: return [3 /*break*/, 6];\r\n            case 5:\r\n                e_1 = _a.sent();\r\n                return [3 /*break*/, 6];\r\n            case 6: return [2 /*return*/];\r\n        }\r\n    });\r\n}\r\nfunction watchGetCustomerDetails() {\r\n    return __generator(this, function (_a) {\r\n        switch (_a.label) {\r\n            case 0: return [4 /*yield*/, effects_1.takeLatest(type_1.UserDetailsTypes.USER_DETAILS, handleUserDetails)];\r\n            case 1:\r\n                _a.sent();\r\n                return [2 /*return*/];\r\n        }\r\n    });\r\n}\r\nfunction sampleUserSaga() {\r\n    return __generator(this, function (_a) {\r\n        switch (_a.label) {\r\n            case 0: return [4 /*yield*/, effects_1.all([effects_1.fork(watchGetCustomerDetails)])];\r\n            case 1:\r\n                _a.sent();\r\n                return [2 /*return*/];\r\n        }\r\n    });\r\n}\r\nexports.sampleUserSaga = sampleUserSaga;\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/sagas/sample-user-saga.ts?");
+
+/***/ }),
+
+/***/ "i0Yl":
+/*!***********************************!*\
+  !*** external "typesafe-actions" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_i0Yl__;\n\n//# sourceURL=webpack://sample-widget-custom/external_%22typesafe-actions%22?");
+
+/***/ }),
+
+/***/ "k2Ew":
+/*!*********************************!*\
+  !*** ./src/utils/api-client.ts ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __generator = (this && this.__generator) || function (thisArg, body) {\r\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\r\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\r\n    function verb(n) { return function (v) { return step([n, v]); }; }\r\n    function step(op) {\r\n        if (f) throw new TypeError(\"Generator is already executing.\");\r\n        while (_) try {\r\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\r\n            if (y = 0, t) op = [op[0] & 2, t.value];\r\n            switch (op[0]) {\r\n                case 0: case 1: t = op; break;\r\n                case 4: _.label++; return { value: op[1], done: false };\r\n                case 5: _.label++; y = op[1]; op = [0]; continue;\r\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\r\n                default:\r\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\r\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\r\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\r\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\r\n                    if (t[2]) _.ops.pop();\r\n                    _.trys.pop(); continue;\r\n            }\r\n            op = body.call(thisArg, _);\r\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\r\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\r\n    }\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.apiClient = void 0;\r\nfunction apiClient(apiClass, params, moduleUrl) {\r\n    var data;\r\n    return __generator(this, function (_a) {\r\n        switch (_a.label) {\r\n            case 0: return [4 /*yield*/, apiClass.executeRequest(params, moduleUrl)];\r\n            case 1:\r\n                data = _a.sent();\r\n                return [2 /*return*/, data];\r\n        }\r\n    });\r\n}\r\nexports.apiClient = apiClient;\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/utils/api-client.ts?");
+
+/***/ }),
 
 /***/ "tPzS":
 /*!*************************************!*\
   !*** ./src/features/sagas/index.ts ***!
   \*************************************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./sample-account-saga */ \"OgqP\"), exports);\r\n__exportStar(__webpack_require__(/*! ./sample-user-saga */ \"ddf/\"), exports);\r\n\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/sagas/index.ts?");
+
+/***/ }),
+
+/***/ "yPTa":
+/*!**************************!*\
+  !*** external "adk-api" ***!
+  \**************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack://sample-widget-custom/./src/features/sagas/index.ts?");
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_yPTa__;\n\n//# sourceURL=webpack://sample-widget-custom/external_%22adk-api%22?");
 
 /***/ })
 
-},[["tPzS","runtime"]]]);
+},[["tPzS","runtime","action-action~component-savings-account~reducer-reducers~saga-sagas","action-action~saga-sagas"]]]);
 });

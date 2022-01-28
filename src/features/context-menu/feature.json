@@ -31,6 +31,13 @@
           "path": "sample-widget-custom/Accounts",
           "directory": "savings-account",
           "displayName": "Savings Account"
+        },
+        {
+          "name": "UserProfile",
+          "type": "component",
+          "path": "sample-widget-custom/Accounts",
+          "directory": "user-profile",
+          "displayName": "User Profile"
         }
       ]
     }

@@ -28,13 +28,52 @@
   },
   "designProps": {
     "isSearchConfig": true,
-    "isBalanceConfig": true
+    "isBalanceConfig": true,
+    "savingsAccountListDetails": {
+      "source": "app",
+      "sourceType": "VARIABLE",
+      "value": "savingsAccountListDetails",
+      "reducer": "sampleAccount"
+    },
+    "savingsAccountListDetailsStatus": {
+      "source": "app",
+      "sourceType": "VARIABLE",
+      "value": "savingsAccountListDetailsStatus",
+      "reducer": "sampleAccount"
+    }
   },
-  "defaultData": {},
+  "defaultData": {
+    "savingsAccountListDetails": [
+      {
+        "alias": "Reyan",
+        "availableBalance": "14432",
+        "accountNumber": {
+          "isHashed" : true,
+          "maskedNumber": "43**********56"
+        },
+        "unclearedBalance": "435687",
+        "CIFNumber": "233453456",
+        "currentBalance": "45677",
+        "intereset": "0.00%"
+      },
+      {
+        "alias": "Philip",
+        "availableBalance": "944332",
+        "accountNumber": {
+          "isHashed" : true,
+          "maskedNumber": "43**********59"
+        },
+        "unclearedBalance": "435687",
+        "CIFNumber": "1234562434",
+        "currentBalance": "45677",
+        "intereset": "0.00%"
+      }
+    ]
+  },
   "events": [],
   "widgetsActions": [
     {
-      "action": "sampleAccountAction",
+      "action": "fetchSavingsAccountListDetailsAction",
       "featureRepo": "sample-widget-custom"
     }
   ],
