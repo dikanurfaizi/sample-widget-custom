@@ -18,7 +18,7 @@ const getAppConfigState = (state) => state.appConfig
 
 function* handleAccountDetails(){
     try {
-        console.log('Inside Saga handleAccountDetails')
+        // console.log('Inside Saga handleAccountDetails')
         const appConfig = yield select(getAppConfigState)
         const moduleUrl = appConfig.baseUrl
         // API request
@@ -29,13 +29,13 @@ function* handleAccountDetails(){
         //API call
         console.log("AccountList Req", accountListReq)
         let savingsAccountList = yield apiClient(AccountList, accountListReq, moduleUrl)
-        console.log("Detail List show", savingsAccountList)
+        // console.log("Detail List show", savingsAccountList)
         let accountDetailsList = []
         let accountDetail, i
         if (savingsAccountList.apiStatus.code === ApiStatusCodes.SUCCESS) {
           for (i = 0; i < savingsAccountList.accountList.length; i++){
               //API call
-              console.log("API CALL AccountList")
+              //console.log("API CALL AccountList")
               let accountDetails = yield apiClient(AccountDetailsSavings,
                 {
                     accountNumber: savingsAccountList.accountList[i].accountNumber,

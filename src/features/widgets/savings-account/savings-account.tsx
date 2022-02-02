@@ -23,8 +23,8 @@ export interface SavingsAccountProps {
   totalAccountBalance?: React.FunctionComponent<LabelProps>
   indexImageInput?: React.FunctionComponent<ImageProps>
   nameLabel?: React.FunctionComponent<LabelProps>
-  accountTypeLabel?: React.FunctionComponent<LabelProps>
-  accountType?: React.FunctionComponent<LabelProps>
+  productNameLabel?: React.FunctionComponent<LabelProps>
+  productName?: React.FunctionComponent<LabelProps>
   accountNumberLabel?: React.FunctionComponent<LabelProps>
   balanceLabel?: React.FunctionComponent<LabelProps>
   transactionHistoryButton?: React.FunctionComponent<ADKButtonProps>
@@ -98,6 +98,12 @@ getCurrentColumns = () => {
       className: 'pa0'
     },
     {
+      title: <this.props.productNameLabel />,
+      dataIndex: 'productNameLabel',
+      key: 'productNameLabel',
+      className: 'pa0'
+    },
+    {
       title: <this.props.accountNumberLabel />,
       dataIndex: 'accountNumberLabel',
       key: 'accountNumberLabel',
@@ -148,6 +154,9 @@ renderSavingsAccountListDetailsItem() {
       nameLabel: this.getAccountAlias(item),
       accountNumberLabel: accountNumber? 
       <this.props.accountNumber className="black-text fw-5" text={accountNumber} />: '',
+      productNameLabel: item.productName?
+      <this.props.productName className="f6 fw5 black-text" 
+      text={item?.productName ? item?.productName : '0'} /> : '',
       balanceLabel: item.availableBalance?
       <this.props.accountBalance className="f6 fw5 black-text"
       text={item?.availableBalance ? item?.availableBalance : '0'}
@@ -266,7 +275,7 @@ renderData(){
     ...({
       expendableRowRender: (record) => this.renderSavingAccountListDetail(record),
       expandIconColumnIndex: columns.length - 1,
-      expandRowByClick: false
+      expandRowByClick: true
     })
   }
   return(

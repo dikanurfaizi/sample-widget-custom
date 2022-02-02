@@ -46,6 +46,7 @@
     "savingsAccountListDetails": [
       {
         "alias": "Reyan",
+        "productName": "BNI TAPLUS",
         "availableBalance": "14432",
         "accountNumber": {
           "isHashed" : true,
@@ -58,6 +59,7 @@
       },
       {
         "alias": "Philip",
+        "productName": "GIRO",
         "availableBalance": "944332",
         "accountNumber": {
           "isHashed" : true,
@@ -114,29 +116,6 @@
     },
     {
       "category": "core-features",
-      "parentProp": "accountBalance",
-      "tag": "Label",
-      "widgetType": "CHILD",
-      "type": "component",
-      "displayName": "Account Balance",
-      "name": "Account Balance",
-      "props": {
-        "prefixPosition": "start",
-        "prefixVisiblility": true,
-        "accountFormat": "0.0.00",
-        "accountBalanceColor": "",
-        "amountTextSize": 12,
-        "amountTextSizeUnit": "px",
-        "prefixFontSize": 12,
-        "prefixFontSizeUnit": "px"
-      },
-      "style": {
-        "position": "relatif",
-        "fontweight": "fw5"
-      }
-    },
-    {
-      "category": "core-features",
       "parentProp": "addDepositButton",
       "tag": "ADKButton",
       "widgetType": "CHILD",
@@ -166,6 +145,15 @@
       "type": "component",
       "name": "Total Balance",
       "props": {
+        "prefixPosition": "start",
+        "prefixVisiblility": true,
+        "accountFormat": "0.0.00",
+        "accountBalanceColor": "",
+        "amountTextSize": 12,
+        "amountTextSizeUnit": "px",
+        "prefixFontSize": 12,
+        "prefixFontSizeUnit": "px",
+        "text": "0.0.00"
       },
       "style": {
         "marginTop": "mt3",
@@ -242,6 +230,25 @@
     },
     {
       "category": "core-features",
+      "parentProp": "productNameLabel",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "name": "Product Name Label",
+      "props": {
+        "languagekey": "ACCOUNT_TYPE",
+        "textsource": "language"
+      },
+      "style": {
+        "marginTop": "mt2",
+        "fontSize": "f6",
+        "height": "h-auto",
+        "paddingBootom": "pb0",
+        "fontWeight": "fw5"
+      }
+    },
+    {
+      "category": "core-features",
       "parentProp": "balanceLabel",
       "tag": "Label",
       "widgetType": "CHILD",
@@ -276,6 +283,25 @@
     },
     {
       "category": "core-features",
+      "parentProp": "productName",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "displayName": "Product Name",
+      "name": "Product Name",
+      "props": {
+        "prefixPosition": "start",
+        "prefixVisiblility": true,
+        "prefixFontSize": 12,
+        "prefixFontSizeUnit": "px"
+      },
+      "style": {
+        "position": "relatif",
+        "fontweight": "fw5"
+      }
+    },
+    {
+      "category": "core-features",
       "parentProp": "accountNumber",
       "tag": "Label",
       "widgetType": "CHILD",
@@ -296,6 +322,29 @@
         "chosenAccountIdentifier": "accountNumber"
       },
       "style": {
+      }
+    },
+    {
+      "category": "core-features",
+      "parentProp": "accountBalance",
+      "tag": "Label",
+      "widgetType": "CHILD",
+      "type": "component",
+      "displayName": "Account Balance",
+      "name": "Account Balance",
+      "props": {
+        "prefixPosition": "start",
+        "prefixVisiblility": true,
+        "accountFormat": "0.0.00",
+        "accountBalanceColor": "",
+        "amountTextSize": 12,
+        "amountTextSizeUnit": "px",
+        "prefixFontSize": 12,
+        "prefixFontSizeUnit": "px"
+      },
+      "style": {
+        "position": "relatif",
+        "fontweight": "fw5"
       }
     },
     {

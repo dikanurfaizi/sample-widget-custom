@@ -12,8 +12,8 @@ export interface SavingsAccountProps {
     totalAccountBalance?: React.FunctionComponent<LabelProps>;
     indexImageInput?: React.FunctionComponent<ImageProps>;
     nameLabel?: React.FunctionComponent<LabelProps>;
-    accountTypeLabel?: React.FunctionComponent<LabelProps>;
-    accountType?: React.FunctionComponent<LabelProps>;
+    productNameLabel?: React.FunctionComponent<LabelProps>;
+    productName?: React.FunctionComponent<LabelProps>;
     accountNumberLabel?: React.FunctionComponent<LabelProps>;
     balanceLabel?: React.FunctionComponent<LabelProps>;
     transactionHistoryButton?: React.FunctionComponent<ADKButtonProps>;
